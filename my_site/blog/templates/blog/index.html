@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'post.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+{% endblock %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/girl.jpg' %}" alt="Homa - The Author Of This Blog">
+            <h2>Homa's Blog</h2>
+            <p>Hi, I'm Homa and I love to blog about fashion, lifestyle and beauty!</p>
+        </header>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+        
+        <ul>
+            {% for post in posts %}
+            {% include 'blog/includes/post.html' %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I do</h2>
+        <p>I am a YouTuber and content creator and also a model and also an investor. I produce Music Videos and contents for the top brands.
+            I love dancing, cooking, playing piano, sky diving and... .
+        </p>
+        <p>My goal is to help and inspire people, especially woman, to persue their dreams and make them come true. I want
+            to be an example of someone who is doing what she loves.
+        </p>
+    </section>
+{% endblock %}
